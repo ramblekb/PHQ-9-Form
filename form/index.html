@@ -44,7 +44,9 @@
          <!-- <input name="secret" type="hidden" value="1b3" /> -->
          <!-- <button type="submit">Send It!</button> -->
          <input name="results" type="button" value="Sum" id="txt" onclick="response()" />
+
          </div>
+
          </div>
          <!-- <button onclick="response()">Try it</button> -->
       </form>
@@ -53,19 +55,23 @@
 
       <h2>Form Data</h2>
       <pre>
-
+<div class="container">
          <p id="demo"></p>
-         <div id="gsum"></div>
-      
+      </div>
+
+         <p id="gsum"> Interpretation of results: <br> The total sum of the responses suggests varying levels<br> of depression. Scores range from 0 to 27. <br> In general, a total of 10 or above is suggestive of <br> the presence of depression. Listed below are PHQ-9 totals, <br> the levels of depression that they relate to, and suggested<br> treatment for each level of depression:
+      </p>
+      <p> The PHQ-9 is a 9-question instrument given to individuals in<br> order to screen for the presence and severity of depression.<br> It is the 9-question depression scale from the<br> Patient Health Questionnaire (PHQ). The results<br> of the PHQ-9 may be used to make a depression diagnosis<br> according to DSM-IV criteria and takes less than 3 minutes<br> to complete. The total of all 9 responses from the<br> PHQ-9 aims to predict the presence and severity of depression.<br> Primary care providers frequently use the PHQ-9 to screen<br> for depression in patients.
+      </p>
       </pre>
    </div>
 
 </body>
 <script>
    $('#txt').on('click', function () {
-      alert(getsum());
+      console.log(getsum());
    });
-   document.getElementById("gsum").innerHTML = getsum();
+   document.getElementById("gsum").innerHTML = getsum() + i;
 
 
    function getsum() {
@@ -83,15 +89,15 @@
 
       var feedback;
       if (i < 5) {
-         feedback = "None" + i;
+         feedback = "Your result number is: " + i + "<br></br>According to PHQ9's Personal Health Questionnaire<br></br>Depression Severity of " + "Results: 0-4 equal to None to Minimal: <br></br>w/ No proposed treatment actions.";
       } else if (i < 10) {
-         feedback = "Mild: " + i;
+         feedback = "Your result number is: " + i + "<br></br>According to PHQ9's Personal Health Questionnaire<br></br>Depression Severity of " + "Results: 5-9 equal to Mild Severety: <br></br>Proposed Treatment Actions: Watchful waiting; repeat PHQ 9<br></br>at Follow-up.";
       } else if (i < 15) {
-         feedback = "Moderate" + i;
+         feedback = "Your result number is: " + i + "<br></br>According to PHQ9's Personal Health Questionnaire<br></br>Depression Severity of " + "Results: 10-14 equal to Moderate: <br></br>Proposed Treatment Actions: Review treatment plan if not<br></br>improving in past 4 weeks; Consider discussion of additional<br></br>support such as pharmacotherapy.";
       } else if (i < 20) {
-         feedback = "Moderately Severe" + i;
+         feedback = "Your result number is: " + i + "<br></br>According to PHQ9's Personal Health Questionnaire<br></br>Depression Severity of " + "Results: 15-19 equal to<br></br>Moderately Severe: " + i + "<br></br>Proposed Treatment Actions: <br></br>Consider adjusting treatment plan<br></br>and/or frequency of sessions; Discuss additional<br></br>supports such as pharmacotherapy.";
       } else {
-         feedback = "Severe" + i;
+         feedback = "Your result number is: " + i + "<br></br>According to PHQ9's Personal Health Questionnaire<br></br>Depression Severity of " + "Results: 20-27 equal to Severe: <br></br>Proposed Treatment Actions: Adjust treatment plan; focused assessment of safety plan and pharmacotherapy evaluation/ re-evaluation; If emergent then refer to higher level of care; Likely Not a candidate for asynchronous/text therapy.";
       }
       document.getElementById("demo").innerHTML = feedback;
    }

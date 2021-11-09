@@ -124,8 +124,9 @@
    border-color: var(--color-gray-medium);
  }
  
- .contact-form button {
+ #txt {
    display: block;
+   width: 20%;
    margin: 0.5rem 1rem 0;
    padding: 0 1rem 0.125rem;
    background-color: var(--color-gray-medium);
