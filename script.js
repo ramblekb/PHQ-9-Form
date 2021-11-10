@@ -42,7 +42,7 @@ var json = {
       },
 
    ],
-   completedHtml: "<button><a href=\"../io/index.html\">Click to Start Survey</a></button>",
+   completedHtml: "<button><a href=\"../formTwo/index.html\">Click to Start Survey</a></button>",
 };
 
 window.survey = new Survey.Model(json);
