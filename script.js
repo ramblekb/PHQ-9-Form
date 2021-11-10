@@ -7,7 +7,7 @@ var json = {
    showProgressBar: "bottom",
    showQuestionNumber: "false",
    goNextPageAutomatic: true,
-   showNavigationButtons: true,
+   showNavigationButtons: false,
    pages: [
 
       {
@@ -40,17 +40,7 @@ var json = {
             }
          ]
       },
-      // {
-      //    questions: [
-      //       {
-      //          type: "radiogroup",
-      //          name: "libertyordeath",
-      //          title: "Who said 'Give me liberty or give me death?'",
-      //          choicesOrder: "random",
-      //          choices: ["John Hancock", "James Madison", "Patrick Henry", "Samuel Adams"]
-      //       },
-      //    ]
-      // },
+
    ],
    completedHtml: "<button><a href=\"../io/index.html\">Click to Start Survey</a></button>",
 };
