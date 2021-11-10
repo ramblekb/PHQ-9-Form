@@ -20,7 +20,7 @@
       crossorigin="anonymous"></script>
    <link href="https://fonts.googleapis.com/css?family=Lato:300|Open+Sans" rel="stylesheet">
    <link rel="stylesheet" href="./style.css">
-   <script src="./app.js"></script>
+   <script src="./script.js"></script>
 </head>
 
 <body>
@@ -40,30 +40,43 @@
 
          </div>
 
-         </div>
-         <!-- <input name="secret" type="hidden" value="1b3" /> -->
-         <!-- <button type="submit">Send It!</button> -->
-         <input name="results" type="button" value="Sum" id="txt" onclick="response()" />
 
          </div>
-
-         </div>
-         <!-- <button onclick="response()">Try it</button> -->
       </form>
+
+      <button id="bu" onClick="scrollToBottom()"><input name="results" type="button" value="Results" id="txt"
+            onclick="response()" />
+      </button>
+      <div class="container">
+         <p id="info">*Interpretation of results
+            The total sum of the responses suggests varying levels of depression. Scores range from 0 to 27. In general,
+            a total of 10 or above is suggestive of the presence of depression. Listed below are PHQ-9 totals, the
+            levels of depression that they relate to, and suggested treatment for each level of depression: </p>
+      </div>
+      <div class="container">
+         <p id="info">* 1-4: This is considered minimal depression, which suggests that the respondent may not need
+            depression treatment.<br>
+            * 5-9: This is considered mild depression. In response to this result, healthcare providers can use their
+            clinical judgment about treatment based on the duration and severity of symptoms.<br>
+            * 10-14: This is considered moderate depression. Similar to mild depression, healthcare providers can use
+            their clinical judgment and knowledge of the patient to determine a course of treatment.<br>
+            * 15-19: This is considered moderately severe depression. This generally warrants treatment for depression
+            using medication, therapy, or a combination of the two.<br>
+            * 20-27: This is considered severe depression. This warrants treatment for depression using medication,
+            therapy, or a combination of the two.</p>
+      </div>
+
    </section>
    <div class="results">
 
       <h2>Form Data</h2>
       <pre>
 
-         <p id="gsum"> Interpretation of results: <br> The total sum of the responses suggests varying levels<br> of depression. Scores range from 0 to 27. <br> In general, a total of 10 or above is suggestive of <br> the presence of depression. Listed below are PHQ-9 totals, <br> the levels of depression that they relate to, and suggested<br> treatment for each level of depression:
-      </p>
-      <p> The PHQ-9 is a 9-question instrument given to individuals in<br> order to screen for the presence and severity of depression.<br> It is the 9-question depression scale from the<br> Patient Health Questionnaire (PHQ). The results<br> of the PHQ-9 may be used to make a depression diagnosis<br> according to DSM-IV criteria and takes less than 3 minutes<br> to complete. The total of all 9 responses from the<br> PHQ-9 aims to predict the presence and severity of depression.<br> Primary care providers frequently use the PHQ-9 to screen<br> for depression in patients.
-      </p>
-      <div class="container">
+         <div class="container">
          <p id="demo"></p>
-      </div>
-      </pre>
+      </div>      
+      <button id="reb" onClick="scrollToTop()">Return</button>
+   </pre>
    </div>
 
 </body>
@@ -73,7 +86,6 @@
    });
    document.getElementById("gsum").innerHTML = getsum() + i;
 
-
    function getsum() {
       var sum = 0;
       $('input:checked').each(function () {
@@ -81,7 +93,6 @@
       });
       return sum;
    }
-
 </script>
 <script>
    function response() {
@@ -101,9 +112,32 @@
       }
       document.getElementById("demo").innerHTML = feedback;
    }
+</script>
+<script>scrollingElement = (document.scrollingElement || document.body)
+   function scrollToBottom() {
+      scrollingElement.scrollTop = scrollingElement.scrollHeight;
+   }
+
+   function scrollToTop(id) {
+      scrollingElement.scrollTop = 0;
+   }
+
+   //Require jQuery
+   function scrollSmoothToBottom(id) {
+      $(scrollingElement).animate({
+         scrollTop: document.body.scrollHeight
+      }, 500);
+   }
+
+   //Require jQuery
+   function scrollSmoothToTop(id) {
+      $(scrollingElement).animate({
+         scrollTop: 0
+      }, 500);
+   }
 
 </script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.13.0/polyfill.min.js'></script>
-<script src="./app.js"></script>
+<script src="./script.js"></script>
 
 </html>
