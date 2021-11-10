@@ -7,7 +7,7 @@ var json = {
    showProgressBar: "bottom",
    showQuestionNumber: "false",
    goNextPageAutomatic: true,
-   showNavigationButtons: false,
+   showNavigationButtons: true,
    pages: [
 
       {
