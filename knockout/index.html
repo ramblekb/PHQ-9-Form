@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <title>The example shows how to go to the next page automatically, Knockoutjs Survey Library Example</title>
+   <script scr="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+   <link rel="stylesheet" href="https://cdn.form.io/formiojs/formio.full.min.css">
+   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+   <link rel="stylesheet" href="https://cdn.form.io/formiojs/formio.full.min.css">
+   <script src="https://cdn.form.io/formiojs/formio.full.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
+      integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+      crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF"
+      crossorigin="anonymous"></script>
+   <link href="https://fonts.googleapis.com/css?family=Lato:300|Open+Sans" rel="stylesheet">
+   <meta name="viewport" content="width=device-width" />
+   <script src="https://unpkg.com/knockout@3.5.1/build/output/knockout-latest.js"></script>
+   <script src="https://unpkg.com/survey-knockout@1.8.77/survey.ko.min.js"></script>
+   <link href="https://unpkg.com/survey-core@1.8.77/modern.min.css" type="text/css" rel="stylesheet" />
+   <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+   <div id="formio"></div>
+   <div id="surveyElement" style="display:inline-block;width:100%;">
+   </div>
+   <!-- demo -->
+   <div id="surveyResult">
+      <div id="formio"></div>
+   </div>
+   <script>
+
+      $('#txt').on('click', function () {
+         console.log(getsum());
+      });
+      document.getElementById("gsum").innerHTML = getsum() + i;
+
+      function getsum() {
+         var sum = 0;
+         $('input:checked').each(function () {
+            sum += parseInt($(this).val());
+         });
+         return sum;
+      }
+   </script>
+   <script>
+      function response() {
+         var i = getsum()
+
+         var feedback;
+         if (i < 5) {
+            feedback = "Your result number is: " + i + "<br></br>According to PHQ9's Personal Health Questionnaire<br></br>Depression Severity of " + "Results: 0-4 equal to None to Minimal: <br></br>w/ No proposed treatment actions.";
+         } else if (i < 10) {
+            feedback = "Your result number is: " + i + "<br></br>According to PHQ9's Personal Health Questionnaire<br></br>Depression Severity of " + "Results: 5-9 equal to Mild Severety: <br></br>Proposed Treatment Actions: Watchful waiting; repeat PHQ 9<br></br>at Follow-up.";
+         } else if (i < 15) {
+            feedback = "Your result number is: " + i + "<br></br>According to PHQ9's Personal Health Questionnaire<br></br>Depression Severity of " + "Results: 10-14 equal to Moderate: <br></br>Proposed Treatment Actions: Review treatment plan if not<br></br>improving in past 4 weeks; Consider discussion of additional<br></br>support such as pharmacotherapy.";
+         } else if (i < 20) {
+            feedback = "Your result number is: " + i + "<br></br>According to PHQ9's Personal Health Questionnaire<br></br>Depression Severity of " + "Results: 15-19 equal to<br></br>Moderately Severe: " + i + "<br></br>Proposed Treatment Actions: <br></br>Consider adjusting treatment plan<br></br>and/or frequency of sessions; Discuss additional<br></br>supports such as pharmacotherapy.";
+         } else {
+            feedback = "Your result number is: " + i + "<br></br>According to PHQ9's Personal Health Questionnaire<br></br>Depression Severity of " + "Results: 20-27 equal to Severe: <br></br>Proposed Treatment Actions: Adjust treatment plan; focused assessment of safety plan and pharmacotherapy evaluation/ re-evaluation; If emergent then refer to higher level of care; Likely Not a candidate for asynchronous/text therapy.";
+         }
+         document.getElementById("demo").innerHTML = feedback;
+      }
+
+   </script>
+
+   <script type="text/javascript" src="./script.js"></script>
+   <script type="text/javascript" src="./app.js"></script>
+
+</body>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.13.0/polyfill.min.js'></script>
+
+
+</html>

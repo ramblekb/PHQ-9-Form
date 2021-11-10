@@ -58,7 +58,7 @@
    border: 1px solid var(--color-gray-light);
    overflow-x: scroll;
  }
- 
+
  .contact-form form {
    position: relative;
    display: block;
@@ -122,6 +122,7 @@
    border-color: var(--color-gray-medium);
  }
  
+ 
  .contact-form button {
    display: block;
    margin: 0.5rem 1rem 0;
@@ -147,13 +148,17 @@
  #txt {
    height: 40px;
    width: auto;
-   border-width: 2px;
+   border-width: 0px;
  }
 
- #reb {
+ #reb, #butCant {
    float: right;
  }
 
  #bu {
    background-color: #00000000;
  }
+.column {
+  float:right;
+  padding-right: 20%;
+}

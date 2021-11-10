@@ -241,13 +241,13 @@ Formio.createForm(document.getElementById('formio'), {
    ]
 })
    .then(function (form) {
-      // form.on('change', function (result) {
-      //    document.querySelector('#subJson').innerHTML = "result: " + JSON.stringify(result.data) + "values: " + JSON.stringify(result.data);
-      // });
-
-      form.on('submitDone', function (submission) {
-         window.location = '/app/thanks.html';
+      form.on('change', function (result) {
+         document.querySelector('#surveyElements').innerHTML = "result: " + JSON.stringify(result.data) + "values: " + JSON.stringify(result.data);
       });
+
+      // form.on('submitDone', function (submission) {
+      //    window.location = '/app/thanks.html';
+      // });
 
 
    });
