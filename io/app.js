@@ -1,7 +1,7 @@
 Formio.createForm(document.getElementById('formio'), {
    "display": "form",
    "components": [{
-      "label": "Over the last two weeks, how often have you been bothered by any of the following problems?",
+      "label": "PHQ-9 Form",
       "tableView": true,
       "questions": [{
          "label": "Little interest or pleasure in doing things?",
@@ -59,23 +59,18 @@ Formio.createForm(document.getElementById('formio'), {
       "values": [{
          "label": "Not at all",
          "value": 0,
-         "tooltip": "0"
       },
       {
          "label": "Several days",
          "value": 1,
-         "tooltip": ""
       },
       {
          "label": "More than half the days",
          "value": 2,
-         "tooltip": ""
       },
       {
          "label": "Nearly every day",
          "value": 3,
-         "key": "ansra",
-         "tooltip": ""
       }
       ],
 

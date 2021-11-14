@@ -42,7 +42,7 @@
  .contact-form,
  .results {
    width: 90vw;
-   max-width: 750px;
+   max-width: 850px;
    margin: 4vh auto;
  }
  
@@ -72,6 +72,7 @@
  .input-group {
    margin-top: 0.25rem;
    padding: 0.5rem 1rem;
+   border-radius: 20px;
  }
  
  .contact-form label {
